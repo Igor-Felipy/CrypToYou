@@ -15,7 +15,7 @@ model = {
 @app.route("/", methods=['GET'])
 def rules():
     return jsonify({
-        'how_to_use' : ' ',
+        'how_to_use' : 'https://github.com/Igor-Felipy/CrypToYou ',
         'cryptography_types' : {
             'chinese' : 'convert the characters to chinese characters'
         }
