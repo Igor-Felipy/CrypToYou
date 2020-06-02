@@ -23,30 +23,32 @@ def rules():
 
 @app.route("/crypt", methods=['POST'])
 def choose_crypt():
-    data = request.get_json()
-    crypt = data['cryptography']
-    user_data = data['data']
-    key = data['key']
+    try:
+        data = request.get_json()
+        crypt = data['cryptography']
+        user_data = data['data']
+        key = data['key']
 
-    response = crypt_functions
+        response = crypt_functions
 
-    return jsonify({'crypted' : response.To_crypt(user_data, crypt, key)}), 200
-
-    return jsonify({'error':'server error'}), 400
+        return jsonify({'crypted' : response.To_crypt(user_data, crypt, key)}), 200
+    except:
+        return jsonify({'error':'server error'}), 400
 
 
 @app.route("/decrypt", methods=['POST'])
 def decrypt():
-    data = request.get_json()
-    crypt = data['cryptography']
-    user_data = data['data']
-    key = data['key']
+    try:
+        data = request.get_json()
+        crypt = data['cryptography']
+        user_data = data['data']
+        key = data['key']
 
-    response = decrypt_functions
+        response = decrypt_functions
 
-    return jsonify({'decrypted':response.To_decrypt(user_data, crypt, key)}), 200
-
-    return jsonify({'error':'server error'}), 400
+        return jsonify({'decrypted':response.To_decrypt(user_data, crypt, key)}), 200
+    except:
+        return jsonify({'error':'server error'}), 400
 
 
 
