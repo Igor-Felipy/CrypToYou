@@ -8,6 +8,7 @@
 
 
 <h3>How to use:</h3>
+
 - In http://127.0.0.1:5000/ you can see the cypher types and the doc link.
 
 - In http://127.0.0.1:5000/crypt you can make a post(the http method) with the data to cypher following the model.
