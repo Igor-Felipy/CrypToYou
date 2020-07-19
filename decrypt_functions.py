@@ -1,7 +1,4 @@
 def To_decrypt(data, crypt, key):
-    data = data
-    crypt = crypt
-    key = key
 
     if crypt == 'chinese':
         s = ''
